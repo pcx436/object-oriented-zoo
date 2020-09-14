@@ -1,4 +1,7 @@
 package ZooEmployees;
+import animals.Animal;
+
+import java.util.Collection;
 
 abstract class ZooEmployees {
     // attributes
@@ -26,9 +29,9 @@ abstract class ZooEmployees {
     }
 
     // abstract methods
-    abstract public void wakeUpAnimal();
-    abstract public void makeNoiseAnimal();
-    abstract public void eatAnimal();
-    abstract public void roamAnimal();
-    abstract public void sleepAnimal();
+    abstract public void wakeUpAnimal(Collection<Animal> ZooAnimals);
+    abstract public void makeNoiseAnimal(Collection<Animal> ZooAnimals);
+    abstract public void eatAnimal(Collection<Animal> ZooAnimals);
+    abstract public void roamAnimal(Collection<Animal> ZooAnimals);
+    abstract public void sleepAnimal(Collection<Animal> ZooAnimals);
 }
