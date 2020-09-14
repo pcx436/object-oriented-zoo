@@ -18,4 +18,17 @@ abstract class ZooEmployees {
     public void setAge(int age) {
         this.age = age;
     }
+
+    // constructor
+    public ZooEmployees(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // abstract methods
+    abstract public void wakeUpAnimal();
+    abstract public void makeNoiseAnimal();
+    abstract public void eatAnimal();
+    abstract public void roamAnimal();
+    abstract public void sleepAnimal();
 }
