@@ -1,4 +1,4 @@
-package animals.Pachyderm;
+package animals.pachyderm;
 
 public class Elephant extends Pachyderm{
     public Elephant(String name, int age) {
