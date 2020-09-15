@@ -6,8 +6,8 @@ import java.util.Collection;
 
 public class ZooKeeper extends ZooEmployees {
 
-    public ZooKeeper(String name, int age) {
-        super(name, age);
+    public ZooKeeper(String name, int age, Collection<Animal> animals) {
+        super(name, age, animals);
     }
 
     @Override

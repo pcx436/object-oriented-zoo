@@ -24,9 +24,10 @@ abstract class ZooEmployees {
     }
 
     // constructor
-    public ZooEmployees(String name, int age) {
+    public ZooEmployees(String name, int age, Collection<Animal> zooAnimals) {
         this.name = name;
         this.age = age;
+        this.zooAnimals = zooAnimals;
     }
 
     // abstract methods
