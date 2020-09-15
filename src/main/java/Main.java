@@ -6,11 +6,10 @@ import java.util.Collection;
 
 public class Main {
     public static void  main(String[] args) {
-        Cat fred=new Cat("Fred",8);
-        fred.wakeUp();
-        fred.roam();
-        fred.makeNoise();
-        fred.eat();
-        fred.sleep();
+        // creating collection
+        Collection<Animal> animals = new ArrayList<>();
+
+        // adding animals
+        animals.add(new Cat("Fred",8));
     }
 }
