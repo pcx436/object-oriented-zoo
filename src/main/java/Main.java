@@ -25,7 +25,17 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         System.out.print("Please enter the number of days: ");
         int numDays = scan.nextInt();
-        gronk.eatAnimal();
 
+        for (int currentDay = 0; currentDay < numDays; currentDay++) {
+            gronk.arriveAtZoo(currentDay + 1);
+
+            gronk.wakeUpAnimal();
+            gronk.makeNoiseAnimal();
+            gronk.eatAnimal();
+            gronk.roamAnimal();
+            gronk.sleepAnimal();
+
+            gronk.leaveZoo();
+        }
     }
 }
