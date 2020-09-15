@@ -23,6 +23,9 @@ public class Main {
         animals.add(new Lion("Thorkus", 45));
         animals.add(new Tiger("Mistake", 685));
 
+        // canines
+        animals.add(new Dog("Consuela", 1));
+        animals.add(new Wolf("Grunk", 13));
         // creating ZooKeeper
         ZooKeeper gronk = new ZooKeeper("Gronk", 9000, animals);
 
