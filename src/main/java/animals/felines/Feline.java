@@ -12,6 +12,6 @@ public abstract class Feline extends Animal {
         System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", roared.");
     }
     public void roam(){
-        System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", walked around.");
+        System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", prowl around.");
     }
 }
