@@ -25,8 +25,8 @@ public class ZooKeeper extends ZooEmployees {
     }
 
     @Override
-    public void eatAnimal(Collection<Animal> ZooAnimals) {
-        for(Animal creature : ZooAnimals){
+    public void eatAnimal() {
+        for(Animal creature : zooAnimals){
             creature.eat();
         }
     }
