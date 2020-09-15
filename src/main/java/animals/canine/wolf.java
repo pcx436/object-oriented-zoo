@@ -1,4 +1,4 @@
-package animals.felines;
+package animals.canines;
 
 public class wolf extends Canine{
     public Wolf(String name, int age) {
@@ -7,6 +7,6 @@ public class wolf extends Canine{
 
     @Override
     public void makeNoise() {
-        System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", Howled.");
+        System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", howled.");
     }
 }
