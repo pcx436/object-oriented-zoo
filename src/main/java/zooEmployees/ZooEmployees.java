@@ -7,6 +7,7 @@ abstract class ZooEmployees {
     // attributes
     private String name;
     private int age;
+    protected final Collection<Animal> zooAnimals;
 
     // getter and setters
     public String getName() {
