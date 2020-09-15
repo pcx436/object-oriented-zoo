@@ -14,27 +14,28 @@ public abstract class Animal {
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public int getAge() {
         return age;
     }
-
     public void setAge(int age) {
         this.age = age;
     }
 
+    public void wakeUp(){
+        System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", woke up.");
+    }
+
+    public void sleep(){
+        System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", went to sleep.");
+    }
+
+    public void eat(){
+        System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", was fed.");
+    }
     // abstract methods
-    abstract public void wakeUp();
-
-    abstract public void makeNoise();
-
-    abstract public void eat();
-
     abstract public void roam();
-
-    abstract public void sleep();
+    abstract public void makeNoise();
 }
