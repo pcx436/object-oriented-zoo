@@ -1,4 +1,4 @@
-package ZooEmployees;
+package zooEmployees;
 import animals.Animal;
 
 import java.util.Collection;
