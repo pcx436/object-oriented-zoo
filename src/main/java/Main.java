@@ -16,5 +16,11 @@ public class Main {
         animals.add(new Cat("Fred",8));
         animals.add(new Lion("Thorkus", 45));
         animals.add(new Tiger("Mistake", 685));
+
+        // creating ZooKeeper
+        ZooKeeper gronk = new ZooKeeper("Gronk", 9000, animals);
+
+        gronk.eatAnimal();
+
     }
 }
