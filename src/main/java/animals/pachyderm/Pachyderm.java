@@ -2,7 +2,7 @@ package animals.pachyderm;
 
 import animals.Animal;
 
-public abstract Pachyderm {
+public abstract class Pachyderm extends Animal{
 
     public Pachyderm(String name, int age) {
         super(name, age);
