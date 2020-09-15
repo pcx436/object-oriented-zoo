@@ -39,8 +39,8 @@ public class ZooKeeper extends ZooEmployees {
     }
 
     @Override
-    public void sleepAnimal(Collection<Animal> ZooAnimals) {
-        for(Animal creature : ZooAnimals){
+    public void sleepAnimal() {
+        for(Animal creature : zooAnimals){
             creature.sleep();
         }
     }
