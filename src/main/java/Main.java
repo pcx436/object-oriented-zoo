@@ -1,5 +1,7 @@
 import animals.Animal;
 import  animals.felines.Cat;
+import animals.felines.Lion;
+import animals.felines.Tiger;
 import zooEmployees.ZooKeeper;
 
 import java.util.ArrayList;
@@ -12,5 +14,7 @@ public class Main {
 
         // adding animals
         animals.add(new Cat("Fred",8));
+        animals.add(new Lion("Thorkus", 45));
+        animals.add(new Tiger("Mistake", 685));
     }
 }
