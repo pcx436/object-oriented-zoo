@@ -8,9 +8,10 @@ public abstract class Feline extends Animal {
         super(name, age);
     }
 
-    // abstract methods
-
-    // abstract classes
-    abstract public void makeNoise();
-    abstract public void roam();
+    public void makeNoise(){
+        System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", roared.");
+    }
+    public void roam(){
+        System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", walked around.");
+    }
 }
