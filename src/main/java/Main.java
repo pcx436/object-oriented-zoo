@@ -2,6 +2,11 @@ import animals.Animal;
 import animals.felines.Cat;
 import animals.felines.Lion;
 import animals.felines.Tiger;
+import animals.canine.Dog;
+import animals.canine.Wolf;
+import animals.pachyderm.Elephant;
+import animals.pachyderm.Hippo;
+import animals.pachyderm.Rhino;
 import zooEmployees.ZooKeeper;
 
 import java.util.ArrayList;
