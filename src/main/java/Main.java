@@ -26,6 +26,12 @@ public class Main {
         // canines
         animals.add(new Dog("Consuela", 1));
         animals.add(new Wolf("Grunk", 13));
+
+        // pachyderm
+        animals.add(new Elephant("timmy", 25));
+        animals.add(new Hippo("Gordon", 420));
+        animals.add(new Rhino("Me", 31337));
+
         // creating ZooKeeper
         ZooKeeper gronk = new ZooKeeper("Gronk", 9000, animals);
 
