@@ -1,12 +1,26 @@
+import animals.Animal;
 import  animals.felines.Cat;
+import animals.felines.Lion;
+import animals.felines.Tiger;
+import zooEmployees.ZooKeeper;
+
+import java.util.ArrayList;
+import java.util.Collection;
 
 public class Main {
-    public static void  main(String args[]){
-        Cat fred=new Cat("Fred",8);
-        fred.wakeUp();
-        fred.roam();
-        fred.makeNoise();
-        fred.eat();
-        fred.sleep();
+    public static void  main(String[] args) {
+        // creating collection
+        Collection<Animal> animals = new ArrayList<>();
+
+        // adding animals
+        animals.add(new Cat("Fred",8));
+        animals.add(new Lion("Thorkus", 45));
+        animals.add(new Tiger("Mistake", 685));
+
+        // creating ZooKeeper
+        ZooKeeper gronk = new ZooKeeper("Gronk", 9000, animals);
+
+        gronk.eatAnimal();
+
     }
 }
