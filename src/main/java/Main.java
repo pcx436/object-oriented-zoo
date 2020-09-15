@@ -1,3 +1,4 @@
+import animals.Animal;
 import  animals.felines.Cat;
 
 public class Main {
