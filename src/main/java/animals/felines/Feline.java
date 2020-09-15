@@ -20,8 +20,10 @@ public abstract class Feline extends Animal {
     public void eat(){
         System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", was fed.");
     }
+
+    // abstract classes
     abstract public void makeNoise();
-/*
+    abstract public void roam();
     public void eat();
     public void roam();
     public void sleep();
