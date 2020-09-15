@@ -1,5 +1,5 @@
 import animals.Animal;
-import  animals.felines.Cat;
+import animals.felines.Cat;
 import animals.felines.Lion;
 import animals.felines.Tiger;
 import zooEmployees.ZooKeeper;
