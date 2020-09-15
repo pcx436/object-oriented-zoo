@@ -12,6 +12,6 @@ public abstract class Pachyderm extends Animal{
         System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", grunted.");
     }
     public void roam(){
-        System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", walked around.");
+        System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", roamed around.");
     }
 }
