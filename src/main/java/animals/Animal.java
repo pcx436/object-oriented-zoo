@@ -36,9 +36,6 @@ public abstract class Animal {
         System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", was fed.");
     }
     // abstract methods
-    abstract public void wakeUp();
-    abstract public void makeNoise();
-    abstract public void eat();
     abstract public void roam();
-    abstract public void sleep();
+    abstract public void makeNoise();
 }
