@@ -31,7 +31,7 @@ abstract class ZooEmployees {
     }
 
     // abstract methods
-    abstract public void wakeUpAnimal(Collection<Animal> ZooAnimals);
+    abstract public void wakeUpAnimal();
     abstract public void makeNoiseAnimal(Collection<Animal> ZooAnimals);
     abstract public void eatAnimal(Collection<Animal> ZooAnimals);
     abstract public void roamAnimal(Collection<Animal> ZooAnimals);
