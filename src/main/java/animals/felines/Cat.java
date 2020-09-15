@@ -11,17 +11,7 @@ public class Cat extends Feline{
     }
 
     @Override
-    public void eat() {
-
-    }
-
-    @Override
     public void roam() {
-
-    }
-
-    @Override
-    public void sleep() {
 
     }
 }
