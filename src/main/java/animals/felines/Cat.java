@@ -7,8 +7,6 @@ public class Cat extends Feline{
         super(name, age);
     }
 
-    Random rand = new Random();
-    int num = rand.nextInt(100);
 
     @Override
     public void makeNoise() {
@@ -17,10 +15,14 @@ public class Cat extends Feline{
 
     @Override
     public void sleep(){
+
+        Random rand = new Random();
+        int num = rand.nextInt(100);
+
         if (num <= 29){
             System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", meowed.");
         } else if(num <=59){
-            System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", prowl around.");
+            System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", prowled around.");
         } else{
             System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", went to sleep.");
         }

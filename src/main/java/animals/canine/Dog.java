@@ -7,8 +7,6 @@ public class Dog extends Canine{
         super(name, age);
     }
 
-    Random rand = new Random();
-    int num = rand.nextInt(4);
 
     @Override
     public void makeNoise() {
@@ -17,8 +15,12 @@ public class Dog extends Canine{
 
     @Override
     public void roam(){
+
+        Random rand = new Random();
+        int num = rand.nextInt(4);
+
        if(num == 0){
-           System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", starts digging.");
+           System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", dug a hole.");
        } else{
            System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", runs around.");
        }
