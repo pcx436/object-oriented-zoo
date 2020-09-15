@@ -34,6 +34,6 @@ abstract class ZooEmployees {
     abstract public void wakeUpAnimal();
     abstract public void makeNoiseAnimal();
     abstract public void eatAnimal();
-    abstract public void roamAnimal(Collection<Animal> ZooAnimals);
+    abstract public void roamAnimal();
     abstract public void sleepAnimal(Collection<Animal> ZooAnimals);
 }
