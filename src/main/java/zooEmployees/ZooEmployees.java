@@ -1,13 +1,9 @@
 package zooEmployees;
-import animals.Animal;
-
-import java.util.Collection;
 
 abstract class ZooEmployees {
     // attributes
     private String name;
     private int age;
-    protected final Collection<Animal> zooAnimals;
 
     // getter and setters
     public String getName() {
@@ -24,16 +20,16 @@ abstract class ZooEmployees {
     }
 
     // constructor
-    public ZooEmployees(String name, int age, Collection<Animal> zooAnimals) {
+    public ZooEmployees(String name, int age) {
         this.name = name;
         this.age = age;
-        this.zooAnimals = zooAnimals;
     }
 
-    // abstract methods
-    abstract public void wakeUpAnimal();
-    abstract public void makeNoiseAnimal();
-    abstract public void eatAnimal();
-    abstract public void roamAnimal();
-    abstract public void sleepAnimal();
+    public void arriveAtZoo(int currentDay) {
+        System.out.println(this.name + " has arrived at the zoo on day " + currentDay + ".");
+    }
+
+    public void leaveZoo() {
+        System.out.println(this.name + " has left the zoo for the day.");
+    }
 }
