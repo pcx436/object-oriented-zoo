@@ -14,12 +14,12 @@ public class Cat extends Feline{
     public void makeNoise() {
         System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", meowed.");
     }
-    
+
     @Override
     public void sleep(){
         if (num <= 29){
             System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", meowed.");
-        } else if(num > 29 && num <=59){
+        } else if(num <=59){
             System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", prowl around.");
         } else{
             System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", went to sleep.");
