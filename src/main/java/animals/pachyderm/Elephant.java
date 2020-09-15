@@ -7,6 +7,6 @@ public class Elephant extends Pachyderm{
 
     @Override
     public void makeNoise() {
-        System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", trumpeted.");
+        System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", blows it's trunk.");
     }
 }
