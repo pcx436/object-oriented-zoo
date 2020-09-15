@@ -29,11 +29,4 @@ abstract class ZooEmployees {
         this.age = age;
         this.zooAnimals = zooAnimals;
     }
-
-    // abstract methods
-    abstract public void wakeUpAnimal();
-    abstract public void makeNoiseAnimal();
-    abstract public void eatAnimal();
-    abstract public void roamAnimal();
-    abstract public void sleepAnimal();
 }
