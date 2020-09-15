@@ -18,8 +18,8 @@ public class ZooKeeper extends ZooEmployees {
     }
 
     @Override
-    public void makeNoiseAnimal(Collection<Animal> ZooAnimals) {
-        for(Animal creature : ZooAnimals){
+    public void makeNoiseAnimal() {
+        for(Animal creature : zooAnimals){
             creature.makeNoise();
         }
     }
