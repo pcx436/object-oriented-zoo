@@ -1,4 +1,4 @@
-package animals.canines;
+package animals.canine;
 
 import animals.Animal;
 
