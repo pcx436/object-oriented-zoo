@@ -24,4 +24,12 @@ abstract class ZooEmployees {
         this.name = name;
         this.age = age;
     }
+
+    public void arriveAtZoo(int currentDay) {
+        System.out.println(this.name + " has arrived at the zoo on day " + currentDay + ".");
+    }
+
+    public void leaveZoo() {
+        System.out.println(this.name + " has left the zoo for the day.");
+    }
 }
