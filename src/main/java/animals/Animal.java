@@ -24,6 +24,17 @@ public abstract class Animal {
         this.age = age;
     }
 
+    public void wakeUp(){
+        System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", woke up.");
+    }
+
+    public void sleep(){
+        System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", went to sleep.");
+    }
+
+    public void eat(){
+        System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", was fed.");
+    }
     // abstract methods
     abstract public void wakeUp();
     abstract public void makeNoise();
