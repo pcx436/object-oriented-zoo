@@ -7,7 +7,6 @@ abstract class ZooEmployees {
     // attributes
     private String name;
     private int age;
-    protected final Collection<Animal> zooAnimals;
 
     // getter and setters
     public String getName() {
@@ -24,9 +23,8 @@ abstract class ZooEmployees {
     }
 
     // constructor
-    public ZooEmployees(String name, int age, Collection<Animal> zooAnimals) {
+    public ZooEmployees(String name, int age) {
         this.name = name;
         this.age = age;
-        this.zooAnimals = zooAnimals;
     }
 }

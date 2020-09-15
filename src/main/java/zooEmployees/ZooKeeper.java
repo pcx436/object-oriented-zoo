@@ -5,9 +5,11 @@ import animals.Animal;
 import java.util.Collection;
 
 public class ZooKeeper extends ZooEmployees {
+    private final Collection<Animal> zooAnimals;
 
     public ZooKeeper(String name, int age, Collection<Animal> animals) {
-        super(name, age, animals);
+        super(name, age);
+        this.zooAnimals = animals;
     }
 
     public void wakeUpAnimal() {
