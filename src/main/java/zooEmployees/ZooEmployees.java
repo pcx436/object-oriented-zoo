@@ -1,7 +1,4 @@
 package zooEmployees;
-import animals.Animal;
-
-import java.util.Collection;
 
 abstract class ZooEmployees {
     // attributes
