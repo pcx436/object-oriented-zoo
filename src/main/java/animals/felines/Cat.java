@@ -7,11 +7,6 @@ public class Cat extends Feline{
 
     @Override
     public void makeNoise() {
-
-    }
-
-    @Override
-    public void roam() {
-
+        System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", meowed.");
     }
 }
