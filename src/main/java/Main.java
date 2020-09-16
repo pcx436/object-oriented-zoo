@@ -7,6 +7,8 @@ import animals.canine.Wolf;
 import animals.pachyderm.Elephant;
 import animals.pachyderm.Hippo;
 import animals.pachyderm.Rhino;
+import animals.corvidae.Crow;
+import animals.corvidae.Raven;
 import zooEmployees.ZooKeeper;
 
 import java.util.ArrayList;
@@ -31,6 +33,10 @@ public class Main {
         animals.add(new Elephant("timmy", 25));
         animals.add(new Hippo("Gordon", 420));
         animals.add(new Rhino("Me", 31337));
+
+        // corvidae
+        animals.add(new Crow("James", 12));
+        animals.add(new Raven("Raven", 99));
 
         // creating ZooKeeper
         ZooKeeper gronk = new ZooKeeper("Gronk", 9000, animals);
