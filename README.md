@@ -15,6 +15,13 @@ attribute `zooAnimals` and we could not decide if it should belong in the `ZooKe
 but they were resolved relatively quickly.
 * Two of the group members were somewhat new to java, so it took some time to get up to speed.
 
+## Compilation and Execution Instructions
+We built this project with Apache Maven. In order to compile and run our code, do the following:
+```bash
+mvn clean compile
+cd target/classes/
+java Main
+```
 
 ## Credits
 This project was completed by Jacob Malcy, Kyle Stewart, and Vincent Liu.
