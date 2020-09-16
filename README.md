@@ -8,6 +8,13 @@ exhibit class inheritance principles through a hierarchical structure of animal 
 * We also assumed that negative numbers would not be entered for the day the user is
 asked to enter or the age of animals.
 
+## Development Issues
+* We often had issues with deciding the location of class attributes. For example, the `ZooKeeper` class has an
+attribute `zooAnimals` and we could not decide if it should belong in the `ZooKeeper` or `ZooEmployee` class.
+* We encountered frequent problems relating to how we used the version control system,
+but they were resolved relatively quickly.
+* Two of the group members were somewhat new to java, so it took some time to get up to speed.
+
 
 ## Credits
 This project was completed by Jacob Malcy, Kyle Stewart, and Vincent Liu.
