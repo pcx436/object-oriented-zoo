@@ -2,7 +2,6 @@ import animals.Animal;
 import zooEmployees.Observer;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public class ZooClock {
@@ -22,11 +21,10 @@ public class ZooClock {
 
     public void begin(){
         this.time = 8;
-        System.out.println("Clock: " + Integer.toString(this.time));
         while(this.time < 21){
-            this.time++;
             System.out.println("Clock: " + Integer.toString(this.time));
             notifyObservers();
+            this.time++;
         }
     }
 
