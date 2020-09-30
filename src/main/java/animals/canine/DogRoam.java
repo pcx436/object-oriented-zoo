@@ -1,10 +1,13 @@
 package animals.canine;
 
 import animals.Animal;
+import animals.RoamBehavior;
 
 import java.util.Random;
 
-public class ComplexRoam implements RoamBehavior{
+// implementing the ComplexRoam used by the Dog Class
+public class DogRoam implements RoamBehavior {
+
     @Override
     public void roam(Animal animalObject){
 

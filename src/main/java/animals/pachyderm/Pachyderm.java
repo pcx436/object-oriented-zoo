@@ -1,6 +1,7 @@
 package animals.pachyderm;
 
 import animals.Animal;
+import animals.RoamBehavior;
 
 public abstract class Pachyderm extends Animal{
 
@@ -11,7 +12,8 @@ public abstract class Pachyderm extends Animal{
     public void makeNoise(){
         System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", grunted.");
     }
-    public void roam(){
-        System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", roamed around.");
+
+    public Pachyderm(String name, int age, RoamBehavior roamBehavior) {
+        super(name, age, roamBehavior);
     }
 }

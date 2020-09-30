@@ -9,6 +9,7 @@ public class ZooAnnouncer extends ZooEmployees implements PropertyChangeListener
         super(name, age);
     }
 
+    // observing the the
     @Override
     public void propertyChange(PropertyChangeEvent propertyChangeEvent) {
         Object source = propertyChangeEvent.getSource();

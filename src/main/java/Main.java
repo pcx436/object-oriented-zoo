@@ -1,14 +1,8 @@
 import animals.Animal;
-import animals.canine.BasicRoam;
-import animals.canine.ComplexRoam;
-import animals.felines.Cat;
-import animals.felines.Lion;
-import animals.felines.Tiger;
-import animals.canine.Dog;
-import animals.canine.Wolf;
-import animals.pachyderm.Elephant;
-import animals.pachyderm.Hippo;
-import animals.pachyderm.Rhino;
+import animals.canine.*;
+import animals.corvidae.CorvidaeRoam;
+import animals.felines.*;
+import animals.pachyderm.*;
 import animals.corvidae.Crow;
 import animals.corvidae.Raven;
 import zooEmployees.ZooAnnouncer;
@@ -25,30 +19,29 @@ public class Main {
         Collection<Animal> animals = new ArrayList<>();
 
         // adding animals
-        animals.add(new Cat("Fred",8));
-        animals.add(new Lion("Thorkus", 45));
-        animals.add(new Tiger("Mistake", 685));
+        animals.add(new Cat("Fred",8, new FelineRoam()));
+        animals.add(new Lion("Thorkus", 45, new FelineRoam()));
+        animals.add(new Tiger("Mistake", 685, new FelineRoam()));
 
         // canines
-        Dog consuela = new Dog("Consuela", 1);
-        consuela.setRoamBehavior(new ComplexRoam());
-        animals.add(consuela);
+        // using delegation for the roam feature for Dog and Wolf class
+        animals.add(new Dog("Consuela", 1, new DogRoam()));
 
-        Wolf grunk = new Wolf("Grunk", 13);
-        grunk.setRoamBehavior(new BasicRoam());
-        animals.add(grunk);
+        animals.add(new Wolf("Grunk", 13, new WolfRoam()));
 
         // pachyderm
-        animals.add(new Elephant("timmy", 25));
-        animals.add(new Hippo("Gordon", 420));
-        animals.add(new Rhino("Me", 31337));
+        animals.add(new Elephant("timmy", 25, new PachydermRoam()));
+        animals.add(new Hippo("Gordon", 420, new HippoRoam()));
+        animals.add(new Rhino("Me", 31337, new PachydermRoam()));
 
         // corvidae
-        animals.add(new Crow("James", 12));
-        animals.add(new Raven("Raven", 99));
+        animals.add(new Crow("James", 12, new CorvidaeRoam()));
+        animals.add(new Raven("Raven", 99, new CorvidaeRoam()));
 
         // creating ZooKeeper
         ZooKeeper gronk = new ZooKeeper("Gronk", 9000, animals);
+
+        // creating ZooAnnouncer
         ZooAnnouncer throckmorton = new ZooAnnouncer("Throckmorton the convicted (and board-certified) stalker",
                 -5);
         ZooFoodServer bumpis = new ZooFoodServer("Bumpis", 9);
