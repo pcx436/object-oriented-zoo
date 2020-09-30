@@ -43,7 +43,6 @@ public abstract class Animal {
         System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", was fed.");
     }
 
-
     // allowing delegation of roam functionality via roam
     private RoamBehavior roamBehavior;
     public void roam(){
