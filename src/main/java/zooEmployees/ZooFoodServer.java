@@ -3,7 +3,7 @@ package zooEmployees;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ZooFoodServer extends ZooEmployees{
+public class ZooFoodServer extends ZooEmployees implements Observer {
 
     private final List<Observer> observers = new ArrayList<>();
     private String state;
@@ -14,7 +14,7 @@ public class ZooFoodServer extends ZooEmployees{
 
     public void setState(String state) {
         this.state = "The ZooFoodServer is " + state;
-        notifyObservers();
+        System.out.println(this.state);
     }
 
     private void notifyObservers() {
@@ -23,12 +23,17 @@ public class ZooFoodServer extends ZooEmployees{
         }
     }
 
+    public void addObserver(Observer o) { observers.add(o); }
+    public void removeObserver(Observer o) { observers.remove(o); }
+
+
     public void makeFood() {
         this.setState("making food.");
     }
 
     public void serveFood() {
         this.setState("serving food.");
+        notifyObservers();
     }
 
     public void clean() {
