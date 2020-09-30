@@ -18,23 +18,25 @@ public class Main {
         // creating collection
         Collection<Animal> animals = new ArrayList<>();
 
-        // adding animals
+        // adding feline
+        // using delegation on roam
         animals.add(new Cat("Fred",8, new FelineRoam()));
         animals.add(new Lion("Thorkus", 45, new FelineRoam()));
         animals.add(new Tiger("Mistake", 685, new FelineRoam()));
 
-        // canines
-        // using delegation for the roam feature for Dog and Wolf class
+        // adding canines
+        // using delegation on roam
         animals.add(new Dog("Consuela", 1, new DogRoam()));
-
         animals.add(new Wolf("Grunk", 13, new WolfRoam()));
 
-        // pachyderm
+        // adding pachyderm
+        // using delegation on roam
         animals.add(new Elephant("timmy", 25, new PachydermRoam()));
         animals.add(new Hippo("Gordon", 420, new HippoRoam()));
         animals.add(new Rhino("Me", 31337, new PachydermRoam()));
 
-        // corvidae
+        // adding corvidae
+        // using delegation on roam
         animals.add(new Crow("James", 12, new CorvidaeRoam()));
         animals.add(new Raven("Raven", 99, new CorvidaeRoam()));
 
@@ -45,12 +47,19 @@ public class Main {
         ZooAnnouncer throckmorton = new ZooAnnouncer("Throckmorton the convicted (and board-certified) stalker",
                 -5);
         ZooFoodServer bumpis = new ZooFoodServer("Bumpis", 9);
+
+        // adding ZooAnnouncer as Observer to ZooKeeper
         gronk.addPCL(throckmorton);
+
+        // adding ZooAnnouncer as Observer to ZooFoodServer
         bumpis.addPCL(throckmorton);
 
         // creating ZooClock
         ZooClock Clock = new ZooClock();
+
+        // adding ZooKeeper as Observer to ZooClock
         Clock.addPCL(gronk);
+        // adding ZooFoodServer as Observer to ZooClock
         Clock.addPCL(bumpis);
 
         // get user input days
@@ -58,6 +67,7 @@ public class Main {
         System.out.print("Please enter the number of days: ");
         int numDays = scan.nextInt();
 
+        // Starting the zoo day
         for (int currentDay = 0; currentDay < numDays; currentDay++) {
             Clock.begin();
         }
