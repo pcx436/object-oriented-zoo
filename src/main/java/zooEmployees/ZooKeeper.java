@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class ZooKeeper extends ZooEmployees {
+public class ZooKeeper extends ZooEmployees implements Observer{
     private final Collection<Animal> zooAnimals;
     private final List<Observer> observers = new ArrayList<>();
     private String state;
@@ -59,6 +59,22 @@ public class ZooKeeper extends ZooEmployees {
 
     public void addObserver(Observer o) { observers.add(o); }
     public void removeObserver(Observer o) { observers.remove(o); }
+    public void update(Object event){
+        int number = ((Integer) event).byteValue();
+        if(number == 9){
+            wakeUpAnimal();
+        } else if(number == 10){
+            roamAnimal();
+        } else if(number == 13 || number == 18){
+            eatAnimal();
+        } else if(number == 17) {
+            makeNoiseAnimal();
+        } else if(number == 19){
+            sleepAnimal();
+        } else if(number ==20){
+            leaveZoo();
+        }
+    }
 
     private void notifyObservers() {
         for (Observer observer: observers) {
