@@ -5,6 +5,7 @@ import animals.RoamBehavior;
 
 import java.util.Random;
 
+// implementing special roam interface for Hippo
 public class HippoRoam implements RoamBehavior {
     @Override
     public void roam(Animal animalObject) {
