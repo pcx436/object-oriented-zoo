@@ -7,7 +7,7 @@ public class ZooAnnouncer extends ZooEmployees implements Observer {
     }
 
     @Override
-    public void update(String event) {
+    public void update(Object event) {
         System.out.println("Hi, this is the Zoo Announcer. " + event);
     }
 }
