@@ -1,30 +1,27 @@
 package zooEmployees;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 
-public class ZooFoodServer extends ZooEmployees implements Observer {
-
-    private final List<Observer> observers = new ArrayList<>();
+public class ZooFoodServer extends ZooEmployees implements PropertyChangeListener {
+    private final PropertyChangeSupport support;
     private String state;
 
     public ZooFoodServer(String name, int age) {
         super(name, age);
+        support = new PropertyChangeSupport(this);
     }
+
+    public void addPCL(PropertyChangeListener pcl) { support.addPropertyChangeListener(pcl); }
+    public void removePCL(PropertyChangeListener pcl) { support.removePropertyChangeListener(pcl); }
 
     public void setState(String state) {
-        this.state = "The ZooFoodServer is " + state;
+        String newState = "The ZooFoodServer is " + state;
+        support.firePropertyChange("state", this.state, newState);
+        this.state = newState;
         System.out.println(this.state);
     }
-
-    private void notifyObservers() {
-        for (Observer observer: observers) {
-            observer.update(this.state);
-        }
-    }
-
-    public void addObserver(Observer o) { observers.add(o); }
-    public void removeObserver(Observer o) { observers.remove(o); }
 
     public void makeFood() {
         this.setState("making food.");
@@ -32,7 +29,6 @@ public class ZooFoodServer extends ZooEmployees implements Observer {
 
     public void serveFood() {
         this.setState("serving food.");
-        notifyObservers();
     }
 
     public void clean() {
@@ -43,8 +39,9 @@ public class ZooFoodServer extends ZooEmployees implements Observer {
         this.setState("is leaving.");
     }
 
-    public void update(Object event) {
-        int number = ((Integer)event).byteValue();
+    @Override
+    public void propertyChange(PropertyChangeEvent propertyChangeEvent) {
+        int number = (int) propertyChangeEvent.getNewValue();
 
         if (number == 11 || number == 16) {
             makeFood();
@@ -58,5 +55,6 @@ public class ZooFoodServer extends ZooEmployees implements Observer {
         else if (number == 20) {
             leave();
         }
+
     }
 }

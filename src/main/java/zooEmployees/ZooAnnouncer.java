@@ -1,13 +1,22 @@
 package zooEmployees;
 
-public class ZooAnnouncer extends ZooEmployees implements Observer {
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+
+public class ZooAnnouncer extends ZooEmployees implements PropertyChangeListener {
 
     public ZooAnnouncer(String name, int age) {
         super(name, age);
     }
 
     @Override
-    public void update(Object event) {
-        System.out.println("Hi, this is the Zoo Announcer. " + event);
+    public void propertyChange(PropertyChangeEvent propertyChangeEvent) {
+        Object source = propertyChangeEvent.getSource();
+        String value = (String) propertyChangeEvent.getNewValue();
+
+        if (source instanceof ZooKeeper ||
+                (source instanceof ZooFoodServer && value.equals("The ZooFoodServer is serving food."))) {
+            System.out.println("Hi, this is the Zoo Announcer. " + value);
+        }
     }
 }

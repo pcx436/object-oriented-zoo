@@ -1,31 +1,22 @@
-import animals.Animal;
-import zooEmployees.Observer;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 
 public class ZooClock {
-    private final List<Observer> observers = new ArrayList<>();
-    private Integer time;
+    private final PropertyChangeSupport support;
 
-    public ZooClock(){};
-
-    public void addObserver(Observer o) { observers.add(o); }
-    public void removeObserver(Observer o) { observers.remove(o); }
-
-    private void notifyObservers() {
-        for (Observer observer: observers) {
-            observer.update(this.time);
-        }
+    public ZooClock(){
+        support = new PropertyChangeSupport(this);
     }
 
     public void begin(){
-        this.time = 8;
-        while(this.time < 21){
-            System.out.println("Clock: " + Integer.toString(this.time));
-            notifyObservers();
-            this.time++;
+        int time = 8;
+        while(time < 21){
+            System.out.println("Clock: " + time);
+            support.firePropertyChange("time", time, time + 1);
+            time++;
         }
     }
 
+    public void addPCL(PropertyChangeListener pcl) { support.addPropertyChangeListener(pcl); }
+    public void removePCL(PropertyChangeListener pcl) { support.removePropertyChangeListener(pcl); }
 }

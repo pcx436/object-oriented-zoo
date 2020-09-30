@@ -51,14 +51,14 @@ public class Main {
         ZooKeeper gronk = new ZooKeeper("Gronk", 9000, animals);
         ZooAnnouncer throckmorton = new ZooAnnouncer("Throckmorton the convicted (and board-certified) stalker",
                 -5);
-        gronk.addObserver(throckmorton);
         ZooFoodServer bumpis = new ZooFoodServer("Bumpis", 9);
-        bumpis.addObserver(throckmorton);
+        gronk.addPCL(throckmorton);
+        bumpis.addPCL(throckmorton);
 
         // creating ZooClock
         ZooClock Clock = new ZooClock();
-        Clock.addObserver(gronk);
-        Clock.addObserver(bumpis);
+        Clock.addPCL(gronk);
+        Clock.addPCL(bumpis);
 
         // get user input days
         Scanner scan = new Scanner(System.in);
