@@ -3,10 +3,10 @@ package animals.corvidae;
 import animals.RoamBehavior;
 
 public class Raven extends Corvidae{
+    // Constructor with Delegation of roam
     public Raven(String name, int age) {
         super(name, age);
     }
-
     public Raven(String name, int age, RoamBehavior roamBehavior) {
         super(name, age, roamBehavior);
     }

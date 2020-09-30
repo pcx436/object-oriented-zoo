@@ -4,11 +4,10 @@ import animals.Animal;
 import animals.RoamBehavior;
 
 public abstract class Feline extends Animal {
-
+    // Constructor with Delegation of roam
     public Feline(String name, int age) {
         super(name, age);
     }
-
     public Feline(String name, int age, FelineRoam roamBehavior) {
         super(name, age, roamBehavior);
     }
