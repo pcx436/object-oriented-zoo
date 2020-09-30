@@ -22,11 +22,10 @@ public class ZooClock {
 
     public void begin(){
         this.time = 8;
-        System.out.println("Clock: " + Integer.toString(this.time));
         while(this.time < 21){
-            this.time++;
             System.out.println("Clock: " + Integer.toString(this.time));
             notifyObservers();
+            this.time++;
         }
     }
 
