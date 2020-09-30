@@ -1,15 +1,13 @@
 package zooEmployees;
-import java.util.Observable;
-import java.util.Observer;
 
-public class ZooAnnouncer extends ZooEmployees implements Observer{
+public class ZooAnnouncer extends ZooEmployees implements Observer {
 
     public ZooAnnouncer(String name, int age) {
         super(name, age);
     }
 
     @Override
-    public void update(Observable observable, Object o) {
-
+    public void update(String event) {
+        System.out.println("Hi, this is the Zoo Announcer. The Zookeeper is about to " + event);
     }
 }
