@@ -12,7 +12,7 @@ public class ZooKeeper extends ZooEmployees {
     private String state;
 
     public void setState(String state) {
-        this.state = state;
+        this.state = "The ZooKeeper is " + state;
         notifyObservers();
     }
 
