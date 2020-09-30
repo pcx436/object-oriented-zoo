@@ -2,41 +2,47 @@ package zooEmployees;
 
 import animals.Animal;
 
-import java.util.ArrayList;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.util.Collection;
-import java.util.List;
 
-public class ZooKeeper extends ZooEmployees implements Observer{
+public class ZooKeeper extends ZooEmployees implements PropertyChangeListener {
     private final Collection<Animal> zooAnimals;
-    private final List<Observer> observers = new ArrayList<>();
+    private final PropertyChangeSupport support;
     private String state;
 
+    public void addPCL(PropertyChangeListener pcl) { support.addPropertyChangeListener(pcl); }
+    public void removePCL(PropertyChangeListener pcl) { support.removePropertyChangeListener(pcl); }
+
     public void setState(String state) {
-        this.state = "The ZooKeeper is " + state;
-        notifyObservers();
+        String newState = "The ZooKeeper is " + state;
+        support.firePropertyChange("state", this.state, newState);
+        this.state = newState;
     }
 
     public ZooKeeper(String name, int age, Collection<Animal> animals) {
         super(name, age);
         this.zooAnimals = animals;
+        support = new PropertyChangeSupport(this);
     }
 
     public void wakeUpAnimal() {
-        this.setState("waking the animals");
+        this.setState("waking the animals.");
         for(Animal creature : zooAnimals){
             creature.wakeUp();
         }
     }
 
     public void makeNoiseAnimal() {
-        this.setState("noising the animals");
+        this.setState("noising the animals.");
         for(Animal creature : zooAnimals){
             creature.makeNoise();
         }
     }
 
     public void eatAnimal() {
-        this.setState("feeding the animals");
+        this.setState("feeding the animals.");
         for(Animal creature : zooAnimals){
             creature.eat();
         }
@@ -57,10 +63,10 @@ public class ZooKeeper extends ZooEmployees implements Observer{
         }
     }
 
-    public void addObserver(Observer o) { observers.add(o); }
-    public void removeObserver(Observer o) { observers.remove(o); }
-    public void update(Object event){
-        int number = ((Integer) event).byteValue();
+    @Override
+    public void propertyChange(PropertyChangeEvent propertyChangeEvent) {
+        int number = (int) propertyChangeEvent.getNewValue();
+
         if(number == 9){
             wakeUpAnimal();
         } else if(number == 10){
@@ -73,12 +79,6 @@ public class ZooKeeper extends ZooEmployees implements Observer{
             sleepAnimal();
         } else if(number ==20){
             leaveZoo();
-        }
-    }
-
-    private void notifyObservers() {
-        for (Observer observer: observers) {
-            observer.update(this.state);
         }
     }
 }
