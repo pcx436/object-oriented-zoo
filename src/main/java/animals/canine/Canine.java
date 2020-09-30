@@ -13,7 +13,8 @@ public abstract class Canine extends Animal {
         System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", growled.");
     }
     public void roam(){
-        System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", walked around.");
+        roamBehavior.roam(this);
+    }
 
     public RoamBehavior getRoamBehavior() {
         return roamBehavior;
