@@ -26,7 +26,6 @@ public class ZooFoodServer extends ZooEmployees implements Observer {
     public void addObserver(Observer o) { observers.add(o); }
     public void removeObserver(Observer o) { observers.remove(o); }
 
-
     public void makeFood() {
         this.setState("making food.");
     }
