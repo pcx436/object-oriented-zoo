@@ -5,9 +5,15 @@ public abstract class Animal {
     private String name;
     private int age;
 
+    // constructor for animal
     public Animal(String name, int age) {
         this.name = name;
         this.age = age;
+    }
+    public Animal(String name, int age, RoamBehavior roamBehavior) {
+        this.name = name;
+        this.age = age;
+        this.roamBehavior = roamBehavior;
     }
 
     // getters and setters
@@ -24,6 +30,7 @@ public abstract class Animal {
         this.age = age;
     }
 
+    // methods
     public void wakeUp(){
         System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", woke up.");
     }
@@ -35,7 +42,19 @@ public abstract class Animal {
     public void eat(){
         System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", was fed.");
     }
+
+    // allowing delegation of roam functionality via roam
+    private RoamBehavior roamBehavior;
+    public void roam(){
+        roamBehavior.roam(this);
+    }
+    public RoamBehavior getRoamBehavior() {
+        return roamBehavior;
+    }
+    public void setRoamBehavior(RoamBehavior roamBehavior) {
+        this.roamBehavior = roamBehavior;
+    }
+
     // abstract methods
-    abstract public void roam();
     abstract public void makeNoise();
 }
