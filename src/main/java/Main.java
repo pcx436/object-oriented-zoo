@@ -47,6 +47,9 @@ public class Main {
 
         // creating ZooKeeper
         ZooKeeper gronk = new ZooKeeper("Gronk", 9000, animals);
+        ZooAnnouncer throckmorton = new ZooAnnouncer("Throck the convicted (and board-certified) stalker",
+                -5);
+        gronk.addObserver(throckmorton);
 
         // get user input days
         Scanner scan = new Scanner(System.in);
