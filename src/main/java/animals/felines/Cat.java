@@ -7,6 +7,10 @@ public class Cat extends Feline{
         super(name, age);
     }
 
+    public Cat(String name, int age, FelineRoam roamBehavior) {
+        super(name, age, roamBehavior);
+    }
+
 
     @Override
     public void makeNoise() {
