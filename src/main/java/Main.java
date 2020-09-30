@@ -11,6 +11,7 @@ import animals.pachyderm.Hippo;
 import animals.pachyderm.Rhino;
 import animals.corvidae.Crow;
 import animals.corvidae.Raven;
+import zooEmployees.ZooAnnouncer;
 import zooEmployees.ZooKeeper;
 
 import java.util.ArrayList;
@@ -47,6 +48,9 @@ public class Main {
 
         // creating ZooKeeper
         ZooKeeper gronk = new ZooKeeper("Gronk", 9000, animals);
+        ZooAnnouncer throckmorton = new ZooAnnouncer("Throck the convicted (and board-certified) stalker",
+                -5);
+        gronk.addObserver(throckmorton);
 
         // get user input days
         Scanner scan = new Scanner(System.in);
