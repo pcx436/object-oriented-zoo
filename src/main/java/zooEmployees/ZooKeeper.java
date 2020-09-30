@@ -2,10 +2,13 @@ package zooEmployees;
 
 import animals.Animal;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
-public class ZooKeeper extends ZooEmployees{
+public class ZooKeeper extends ZooEmployees {
     private final Collection<Animal> zooAnimals;
+    private final List<Observer> observers = new ArrayList<>();
     private String state;
 
     public void setState(String state) {
@@ -51,6 +54,15 @@ public class ZooKeeper extends ZooEmployees{
 
         for(Animal creature : zooAnimals){
             creature.sleep();
+        }
+    }
+
+    public void addObserver(Observer o) { observers.add(o); }
+    public void removeObserver(Observer o) { observers.remove(o); }
+
+    private void notifyObservers() {
+        for (Observer observer: observers) {
+            observer.update(this.state);
         }
     }
 }
