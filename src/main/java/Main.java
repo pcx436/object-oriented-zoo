@@ -1,4 +1,6 @@
 import animals.Animal;
+import animals.canine.BasicRoam;
+import animals.canine.ComplexRoam;
 import animals.felines.Cat;
 import animals.felines.Lion;
 import animals.felines.Tiger;
@@ -26,8 +28,13 @@ public class Main {
         animals.add(new Tiger("Mistake", 685));
 
         // canines
-        animals.add(new Dog("Consuela", 1));
-        animals.add(new Wolf("Grunk", 13));
+        Dog consuela = new Dog("Consuela", 1);
+        consuela.setRoamBehavior(new ComplexRoam());
+        animals.add(consuela);
+
+        Wolf grunk = new Wolf("Grunk", 13);
+        grunk.setRoamBehavior(new BasicRoam());
+        animals.add(grunk);
 
         // pachyderm
         animals.add(new Elephant("timmy", 25));
