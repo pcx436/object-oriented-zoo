@@ -1,6 +1,7 @@
 package animals.canine;
 
 import animals.Animal;
+import animals.RoamBehavior;
 
 public abstract class Canine extends Animal {
     protected RoamBehavior roamBehavior;

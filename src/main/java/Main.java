@@ -1,6 +1,6 @@
 import animals.Animal;
-import animals.canine.BasicRoam;
-import animals.canine.ComplexRoam;
+import animals.BasicRoam;
+import animals.ComplexRoam;
 import animals.felines.Cat;
 import animals.felines.Lion;
 import animals.felines.Tiger;
@@ -31,12 +31,14 @@ public class Main {
 
         // canines
         Dog consuela = new Dog("Consuela", 1);
-        consuela.setRoamBehavior(new ComplexRoam());
         animals.add(consuela);
 
         Wolf grunk = new Wolf("Grunk", 13);
-        grunk.setRoamBehavior(new BasicRoam());
         animals.add(grunk);
+
+        // using delegation for the roam feature for Dog and Wolf class
+        grunk.setRoamBehavior(new BasicRoam());
+        consuela.setRoamBehavior(new ComplexRoam());
 
         // pachyderm
         animals.add(new Elephant("timmy", 25));
@@ -49,8 +51,12 @@ public class Main {
 
         // creating ZooKeeper
         ZooKeeper gronk = new ZooKeeper("Gronk", 9000, animals);
+
+        // creating ZooAnnouncer
         ZooAnnouncer throckmorton = new ZooAnnouncer("Throckmorton the convicted (and board-certified) stalker",
                 -5);
+
+        // adding the Observer Announcerthrockmorton to
         gronk.addObserver(throckmorton);
         ZooFoodServer bumpis = new ZooFoodServer("Bumpis", 9);
         bumpis.addObserver(throckmorton);
