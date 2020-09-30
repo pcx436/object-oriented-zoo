@@ -52,21 +52,17 @@ public class Main {
                 -5);
         gronk.addObserver(throckmorton);
 
+        // creating ZooClock
+        ZooClock Clock = new ZooClock();
+        Clock.addObserver(gronk);
+
         // get user input days
         Scanner scan = new Scanner(System.in);
         System.out.print("Please enter the number of days: ");
         int numDays = scan.nextInt();
 
         for (int currentDay = 0; currentDay < numDays; currentDay++) {
-            gronk.arriveAtZoo(currentDay + 1);
-
-            gronk.wakeUpAnimal();
-            gronk.makeNoiseAnimal();
-            gronk.eatAnimal();
-            gronk.roamAnimal();
-            gronk.sleepAnimal();
-
-            gronk.leaveZoo();
+            Clock.begin();
         }
     }
 }
