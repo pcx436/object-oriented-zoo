@@ -1,5 +1,7 @@
 package animals.pachyderm;
 
+import animals.RoamBehavior;
+
 import java.util.Random;
 
 public class Hippo extends Pachyderm {
@@ -7,17 +9,7 @@ public class Hippo extends Pachyderm {
         super(name, age);
     }
 
-
-    @Override
-    public void roam() {
-
-        Random rand = new Random();
-        int num = rand.nextInt(4);
-
-        if(num == 0){
-            System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", charged at the Zoo Keeper.");
-        } else{
-            System.out.println(this.getName() + ", the " + this.getClass().getSimpleName().toLowerCase() + ", roamed around.");
-        }
+    public Hippo(String name, int age, RoamBehavior roamBehavior) {
+        super(name, age, roamBehavior);
     }
 }
